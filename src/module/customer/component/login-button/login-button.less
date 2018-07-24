@@ -1,0 +1,114 @@
+.login-button {
+  display: flex;
+
+  .login-title {
+    color: #4A4A4A;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    margin-bottom: 20px;
+  }
+
+  .login-preview {
+    width: 100%;
+    height: auto;
+
+    span {
+      position: relative;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      position: relative;
+      top: 0;
+      cursor: pointer;
+      border-radius: 12px;
+      border-color: transparent;
+      width: 120px;
+      padding: 5px;
+      display: block;
+      margin: 0 auto 20px;
+      background-color: #1c232c;
+      color: #f6f6f6;
+    }
+
+    span.active {
+      top: 10px;
+    }
+
+    button.active {
+      top: 20px;
+    }
+
+    .active {
+      transition: all .5s ease-in-out;
+    }
+  }
+
+  .login-components {
+    #form-login {
+      height: 0;
+
+      form {
+        width: 50%;
+      }
+
+      &.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        transition: height 0.1s ease-out !important;
+        background-color: #EEEEEE;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+
+        .description {
+          color: #9B9B9B;
+          font-size: 14px;
+          line-height: 18px;
+          margin-bottom: 20px;
+        }
+
+        .input-email, .input-password {
+          border-radius: 21px;
+          border-color: transparent;
+          background-color: #FFFFFF;
+          text-indent: 10px;
+          margin: 10px 0;
+          height: 40px;
+          outline: none;
+        }
+
+        input::placeholder {
+          color: #9B9B9B;
+        }
+
+        .input-submit {
+          height: 40px;
+          border-radius: 21px;
+          border-color: transparent;
+          background-color: #4A4A4A;
+          color: #FFFFFF;
+          margin: 30px 25% 10px 25%;
+        }
+
+        .input-abort {
+          height: 40px;
+          border-radius: 21px;
+          border-color: transparent;
+          background-color: red;
+          color: #FFF;
+          margin: 0 25%;
+        }
+      }
+    }
+  }
+}

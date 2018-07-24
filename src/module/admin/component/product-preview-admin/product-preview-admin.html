@@ -1,0 +1,13 @@
+<div class="product-preview-admin">
+    <div class="content">
+        <img v-bind:src="productMediaUrl">
+        <div class="details">
+            <span class="title">{{ product.attributes.name }}</span>
+            <span class="price">{{ product.attributes.price.gross | currency }}</span>
+        </div>
+        <div class="filler"></div>
+        <div class="button">
+            <a class="select" v-on:click="chooseProduct"></a>
+        </div>
+    </div>
+</div>

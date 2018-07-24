@@ -1,0 +1,10 @@
+<div class="app-nav">
+    <nav class="navbar navbar-default">
+        <router-link to="/" class="navbar-brand">
+            <img src="../../../../assets/logo.svg" style="width: 200px">
+        </router-link>
+        <div class="filler"></div>
+        <button v-if="isLoggedIn" class="btn-logout" @click="logout">Sign out</button>
+        <cart-button></cart-button>
+    </nav>
+</div>

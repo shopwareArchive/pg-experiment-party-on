@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app_stream:
+    image: jasonrivers/nginx-rtmp
+    ports:
+      - "8080:8080"
+      - "1935:1935"
+  app_websocket:
+    build: dev-ops/websocket/.
+    ports:
+      - "12345:12345"

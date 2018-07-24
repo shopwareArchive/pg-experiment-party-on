@@ -1,0 +1,9 @@
+<div class="cart-button" href="#">
+    <div v-if="cart" class="cart--amount">
+        <span class="cart--quantity badge badge-pill">
+            {{ cart.lineItems.length }}
+        </span>
+        <i class="icon--basket"></i>
+        <span class="pl-3">{{ cart.price.totalPrice | currency }}</span>
+    </div>
+</div>

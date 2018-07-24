@@ -1,0 +1,35 @@
+<div class="admin-login">
+    <div class="admin-login__container">
+        <div class="admin-login__image">
+            <div class="admin-login__image-headlines">
+                <div class="admin-login-headline">Hello</div>
+                <div class="admin-login-sub-headline">Welcome back!</div>
+            </div>
+        </div>
+        <form class="admin-login__form">
+            <h2 class="admin-login__form-headline">Log in to your Shopware store</h2>
+            <span>{{ errorMessage }}</span>
+            <div class="admin-login-field">
+                <label for="username">
+                    Username
+                </label>
+                <input type="text"
+                       v-model="username"
+                       id="username"
+                       placeholder="Enter your username...">
+            </div>
+            <div class="admin-login-field">
+                <label for="password">
+                    Password
+                </label>
+                <input type="password"
+                       v-model="password"
+                       id="password"
+                       placeholder="Enter your password...">
+            </div>
+            <div class="admin-login__submit">
+                <input type="submit" @click="login" value="Login">
+            </div>
+        </form>
+    </div>
+</div>

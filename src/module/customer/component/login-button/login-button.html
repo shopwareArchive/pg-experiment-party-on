@@ -1,0 +1,31 @@
+<div class="login-button" v-bind:class="{ 'active': expandedLogin }">
+    <div class="login-preview">
+        <span class="login-title">Join the live event!</span>
+        <button class="sign-in" @click="expandedLogin = true">Sign In</button>
+    </div>
+    <div class="login-components" v-show="expandedLogin">
+        <div class="form-login container" id="form-login" v-bind:class="{ 'active': expandedLogin }">
+            <div class="row justify-content-center">
+                <form>
+                    <div class="login-title"><span>Join the live event!</span></div>
+                    <div class="description"><span>Use the account information<br/>from our shop to sign in!</span></div>
+                    <div class="error-message" v-text="loginError"></div>
+                    <input class="input-email"
+                           type="text"
+                           placeholder="Email"
+                           v-model="email"
+                           autocomplete="email">
+                    <input class="input-password"
+                           type="password"
+                           placeholder="Password"
+                           v-model="password"
+                           autocomplete="password">
+                    <input class="input-submit"
+                           type="submit" v-on:click="submit" value="Sign In" id="loginSubmit">
+                    <input class="input-abort"
+                           type="button" v-on:click="expandedLogin = false" value="Abort">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

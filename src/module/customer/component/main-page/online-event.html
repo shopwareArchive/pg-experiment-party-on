@@ -1,0 +1,27 @@
+<div>
+    <app-nav></app-nav>
+    <div>
+        <div class="stream-row justify-content-center">
+            <live-stream ref="livestream" class="col-md-9"></live-stream>
+            <chat class="chat-container col-md-3" ref="chat" :customer="customer"></chat>
+        </div>
+        <div class="preview-container">
+            <div v-if="!productResponses" class="event-not-started">
+                <span>The event hasn't started yet</span>
+            </div>
+            <div v-for="productResponse in productResponses" :key="productResponse.id">
+                <product-preview class="col-sm-5" :product=productResponse.data
+                                 v-on:choose-product="scrollToProduct"></product-preview>
+            </div>
+        </div>
+
+        <div class="w-100">
+            <product
+                    class="row"
+                    v-for="product in productResponses"
+                    :key="product.id"
+                    :product-response=product>
+            </product>
+        </div>
+    </div>
+</div>

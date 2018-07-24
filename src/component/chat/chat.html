@@ -1,0 +1,21 @@
+<div class="chat">
+    <span class="chat-title">Livestream chat</span>
+    <div class="chat-content" ref="chat-content">
+        <chat-message v-for="message in items" :key="message.id" :message="message">
+        </chat-message>
+    </div>
+    <div class="chat-footer" v-if="customer">
+        <form>
+            <div class="chat-wrapper">
+                <textarea v-model="actualMessage" rows="4" cols="62" maxlength="200"
+                          v-on:keydown.enter="sendMessage">
+                </textarea>
+                <div class="counter">{{ 200 - actualMessage.length }} /200 characters</div>
+            </div>
+            <button type="submit" @click="sendMessage"><span>Send</span></button>
+        </form>
+    </div>
+    <div class="chat-footer" v-else>
+        <login-button></login-button>
+    </div>
+</div>

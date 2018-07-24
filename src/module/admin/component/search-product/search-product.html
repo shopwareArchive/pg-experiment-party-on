@@ -1,0 +1,14 @@
+<div class="search-product-container">
+    <div class="content">
+        <img v-bind:src="productMediaUrl">
+        <div class="title">{{ product.attributes.name }}</div>
+        <div class="filler"></div>
+        <div class="price">{{ product.attributes.price.gross | currency }}</div>
+        <div v-if="!isAdded" class="button add" v-on:click="chooseProduct">
+            <span>Add to Event</span>
+        </div>
+        <div v-else class="button added" v-on:click="removeProduct">
+            <span></span>
+        </div>
+    </div>
+</div>

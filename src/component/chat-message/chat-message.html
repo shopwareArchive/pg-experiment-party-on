@@ -1,0 +1,7 @@
+<div class="chat-message media py-1">
+    <span class="avatar-icon" v-bind:style="{ backgroundColor: stringToColor(message.sender.email) }">{{ getShortHand(message.sender.name) }}</span>
+    <div class="media-body rounded">
+        <b class="sender-name" v-bind:class="{'isAdmin': message.isAdmin}">{{ message.sender.name }}</b>
+        <p class="message">{{ message.message }}</p>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="admin-area">
+    <admin-app-nav></admin-app-nav>
+    <div class="wrapper">
+        <div class="main">
+            <div class="product-previews" v-if="sendProducts.length">
+                <div v-for="product in sendProducts" :key="product.id">
+                    <product-preview-admin
+                            class="col-sm-5"
+                            :product=product
+                            v-on:choose-product="removeProduct"
+                            v-bind:class="{'border-success': product.id === lastSendProduct.id}">
+                    </product-preview-admin>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="search-title">Add Products</div>
+                <div class="search-bar">
+                    <input v-model="searchTerm" class="input--search" placeholder="Search for products ..."
+                           v-on:keydown.enter="searchProducts"/>
+                    <button type="submit" class="" @click="searchProducts">
+                        <i class="icon--search"></i>
+                    </button>
+                </div>
+
+                <search-product v-for="product in searchedProducts"
+                                :key="product.id"
+                                :product="product"
+                                :is-added="isSend(product.id)"
+                                v-on:choose-product="sendProductToCustomer"
+                                v-on:remove-product="removeProduct">
+                </search-product>
+                <div class="loading-indicator">
+                    <div class="wrapper" v-if="linkNext">
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <span class="load-more">Load more</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aside">
+            <div class="fixed">
+                <div class="stream-container">
+                    <live-stream ref="livestream" v-on:play="isStarted = true"></live-stream>
+                    <div class="offline-container" v-if="!isStarted">
+                        <p class="offline">You are currently offline!</p>
+                        <button v-on:click="startStream"><span>Start stream</span></button>
+                    </div>
+                </div>
+                <chat ref="chat" :customer="user"></chat>
+            </div>
+        </div>
+    </div>
+</div>

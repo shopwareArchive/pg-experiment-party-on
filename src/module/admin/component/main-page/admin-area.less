@@ -1,0 +1,163 @@
+.admin-area {
+  .wrapper {
+    display: flex;
+
+    .main {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      margin-left: 140px;
+
+      .product-previews {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 140px;
+      }
+
+      .search-container {
+
+        .search-title {
+          height: 40px;
+          width: 541px;
+          color: #4A4A4A;
+          font-size: 32px;
+          font-weight: 600;
+          line-height: 40px;
+        }
+
+        .search-bar {
+          position: relative;
+          margin-top: 58px;
+          margin-bottom: 48px;
+
+          button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            position: absolute;
+            top: 13px;
+            left: 15px;
+            font-size: 14px;
+          }
+
+          input {
+            height: 44px;
+            width: 584px;
+            border: 2px solid #4A4A4A;
+            outline: none;
+            border-radius: 21px;
+            box-shadow: 0 0 4px 0 rgba(254, 68, 55, 0.2);
+            text-indent: 42px;
+          }
+        }
+      }
+
+      .loading-indicator {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 140px;
+
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .lds-ring {
+          display: inline-block;
+          position: relative;
+          width: 40px;
+          height: 40px;
+          margin: auto;
+        }
+        .lds-ring div {
+          box-sizing: border-box;
+          display: block;
+          position: absolute;
+          width: 28px;
+          height: 28px;
+          margin: 6px;
+          border: 2px solid #000;
+          border-radius: 50%;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          border-color: #000 transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) {
+          animation-delay: -0.45s;
+        }
+        .lds-ring div:nth-child(2) {
+          animation-delay: -0.3s;
+        }
+        .lds-ring div:nth-child(3) {
+          animation-delay: -0.15s;
+        }
+        @keyframes lds-ring {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+
+        .load-more {
+          height: 15px;
+          width: 60px;
+          color: #9B9B9B;
+          font-size: 12px;
+          line-height: 15px;
+          text-align: center;
+        }
+      }
+    }
+
+    .aside {
+      flex: 1;
+      .fixed {
+        position: fixed;
+        margin-right: 30px;
+
+        .stream-container {
+          position: relative;
+          margin-bottom: 50px;
+
+          .offline-container {
+            position: absolute;
+            top: 80px;
+            width: 100%;
+            text-align: center;
+
+            .offline {
+              height: 40px;
+              color: #9B9B9B;
+              font-size: 32px;
+              font-weight: 600;
+              line-height: 40px;
+            }
+
+            button {
+              cursor: pointer;
+              outline: none;
+              height: 40px;
+              width: 160px;
+              border-radius: 21px;
+              border-color: transparent;
+              background-color: #4A4A4A;
+
+              span {
+                height: 18px;
+                width: 78px;
+                color: #FFFFFF;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 18px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

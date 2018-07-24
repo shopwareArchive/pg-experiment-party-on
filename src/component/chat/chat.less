@@ -1,0 +1,80 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+
+  .chat-title {
+    height: 25px;
+    color: #4A4A4A;
+    font-size: 20px;
+    line-height: 25px;
+    margin-left: 20px;
+  }
+
+  .chat-content {
+    min-height: 300px;
+    height: 0;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    margin-left: 20px;
+  }
+
+  .chat-footer {
+    padding: 8px 13px;
+    background-color: rgba(0, 0, 0, .03);
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-wrapper {
+      position: relative;
+
+      .counter {
+        height: 15px;
+        width: 106.7px;
+        color: #9B9B9B;
+        line-height: 15px;
+        text-align: right;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        font-size: 8px;
+      }
+    }
+
+    textarea {
+      resize: none;
+      width: 100%;
+      font-size: 12px;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    button {
+      align-self: flex-end;
+      height: 35.97px;
+      width: 100px;
+      border-radius: 21px;
+      background-color: #4A4A4A;
+      box-shadow: 0 0 4px 0 rgba(254, 68, 55, 0.2);
+
+      span {
+        height: 19px;
+        width: 34px;
+        color: #FFFFFF;
+        font-weight: 600;
+        line-height: 19px;
+        text-align: center;
+      }
+    }
+  }
+
+  .chat-container {
+    div.login-button {
+      .login-components {
+        background-color: gray;
+      }
+    }
+  }
+}

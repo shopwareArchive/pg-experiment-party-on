@@ -9,7 +9,7 @@ export {
 };
 
 function addProductToCart(productId, quantity) {
-    const url = `${process.env.API_ENDPOINT}/storefront-api/checkout/cart/product/${productId}`;
+    const url = `${process.env.API_ENDPOINT}/storefront-api/v1/checkout/cart/product/${productId}`;
     const config = getHeaderData();
 
     const data = {
@@ -21,21 +21,21 @@ function addProductToCart(productId, quantity) {
 }
 
 function loadCart() {
-    const url = `${process.env.API_ENDPOINT}/storefront-api/checkout/cart`;
+    const url = `${process.env.API_ENDPOINT}/storefront-api/v1/checkout/cart`;
     const config = getHeaderData();
 
     return axios.get(url, config);
 }
 
 function getProduct(productId) {
-    const url = `${process.env.API_ENDPOINT}/storefront-api/product/${productId}`;
+    const url = `${process.env.API_ENDPOINT}/storefront-api/v1/product/${productId}`;
     const headers = getHeaderData();
 
     return axios.get(url, headers);
 }
 
 function getCustomerData() {
-    const url = `${process.env.API_ENDPOINT}/storefront-api/customer`;
+    const url = `${process.env.API_ENDPOINT}/storefront-api/v1/customer`;
     const headers = getHeaderData();
 
     return axios.get(url, headers);

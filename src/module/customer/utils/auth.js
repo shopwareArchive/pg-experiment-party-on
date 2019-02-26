@@ -24,7 +24,7 @@ function login(username, password) {
     auth.password = password;
     const headers = getHeaderData();
 
-    return axios.post(`${process.env.API_ENDPOINT}/storefront-api/customer/login`, auth, headers)
+    return axios.post(`${process.env.API_ENDPOINT}/storefront-api/v1/customer/login`, auth, headers)
         .then((response) => {
             setLoginFlag();
             setContextToken(response.data['x-sw-context-token']);
